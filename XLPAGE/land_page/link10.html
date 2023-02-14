@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid FlexBox</title>
+<style>
+    body ul, li, p{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        font-size: 1.2rem;
+        font-family: Arial;
+    }
+
+    body {
+        margin-bottom: 100px;
+        background-color: black;
+    }
+
+    p{
+        /*
+        color: rgba(3, 230, 3, 0.966);
+        */
+        color: #52a2f7;
+    }
+    a {
+        /*background-color: tomato;*/
+        text-decoration: none;
+        font-size: 25px;
+        color:black bold;
+    }
+    .head {
+        background:radial-gradient(white,#026932);
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    .menu{
+        display:flex;
+    }
+    .menu li {
+        margin-left: 10px;
+    }
+    .menu li a {
+        display: block;
+        padding: 10px;
+        /*background-color: tomato;*/
+    }
+    /*css flexbox */
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #52a2f7;
+    }
+    img {
+        width: 300px;
+        max-width: 100%;
+        display: block;
+    }
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .flex > div{
+        flex: 1 1 200px;
+        margin: 10px;
+    }
+
+    .grid1{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 800;
+        margin: 0 auto;
+        grid-gap: 10px;
+    }
+
+    .grid1 > div:nth-child(n + 4){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        align-items: center;
+    }
+    .grid1 > div.anuncio {
+        grid-column: 1;
+        grid-row: 2 / 5;
+        /*border-top: 10px solid tomato;*/
+        display: block;
+    }
+    @media (max-width: 600px) {
+        .grid1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .grid1 > div:nth-child(n + 4){
+            display: block;
+        }
+    }
+
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1; 
+    }
+</style>
+</head>
+<body>
+    <header class='head'>
+        <a href="/"></a>
+        <nav>
+            <ul class="menu">
+                <li><a ref="/">NESTJS BACKEND FRAMEWORK</a></li>  
+                <li><a ref="/">www.degbarbosa.com.br/land.html</a></li>  
+            </ul>
+        </nav>
+        
+    </header>
+    <h1>The Programming Languages Laboratory</h1>
+    <section class="grid1">
+        <div>
+            <img src="zzc1.jpg">
+            <p>The framework</p>
+        </div>
+        <div>
+            <img src="zzc2.jpg">
+            <p>NestJS api development</p>
+        </div>
+        <div>
+            <img src="zzc3.jpg">
+            <p> Backend Programming</p>
+        </div>
+        <div>
+            <img src="zzb1.jpg">
+            <p>mysql show DB </p>
+        </div>
+        
+        <div>
+            <img src="zzb5.jpg">
+            <p>mysql database </p>
+        </div>
+        <div>
+            <img src="zz9.jpg">
+            <p>MySQL tool Workbench</p>
+        </div>
+
+        <div>
+            <img src="node1.jpg">
+            <p>NodeJS Technology CRUD</p>
+        </div>
+        <div>
+            <img src="zz8.jpg">
+            <p>New Features Mysql </p>
+        </div>
+        <div>
+            <img src="yy15.jpg">
+            <p>Windows Node</p>
+        </div>
+        <div>
+            <img src="zzb6.jpg">
+            <p>Query Builder SQL</p>
+        </div>
+        <div>
+            <img src="zz11.jpg">
+            <p>Mysql Select * from table </p>
+        </div>
+        <div>
+            <img src="zz12.jpg">
+            <p>Mysql Show tables </p>
+        </div>
+        <div class="anuncio">
+            <img src="zz4.jpg">
+            <p>MySQL Database</p>
+        </div>
+
+       </section>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid FlexBox</title>
+<style>
+    body ul, li, p{
+        margin: 10px;
+        padding: 0px;
+        list-style: none;
+        font-size: 1.2rem;
+        font-family: Arial;
+    }
+
+    body {
+        margin-bottom: 100px;
+        background-color: black;
+    }
+
+    p{
+        /*
+        color: rgba(3, 230, 3, 0.966);
+        */
+        color: #52a2f7;
+    }
+    a {
+        /*background-color: tomato;*/
+        text-decoration: none;
+        font-size: 25px;
+        color:black bold;
+    }
+    .head {
+        background:radial-gradient(white,#026932);
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    .menu{
+        display:flex;
+    }
+    .menu li {
+        margin-left: 10px;
+    }
+    .menu li a {
+        display: block;
+        padding: 10px;
+        /*background-color: tomato;*/
+    }
+    /*css flexbox */
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #52a2f7;
+    }
+    img {
+        width: 300px;
+        max-width: 100%;
+        display: block;
+    }
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .flex > div{
+        flex: 1 1 200px;
+        margin: 10px;
+    }
+
+    .grid1{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 800;
+        margin: 0 auto;
+        grid-gap: 10px;
+    }
+
+    .grid1 > div:nth-child(n + 4){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        align-items: center;
+    }
+    .grid1 > div.anuncio {
+        grid-column: 1;
+        grid-row: 2 / 5;
+        /*border-top: 10px solid tomato;*/
+        display: block;
+    }
+    @media (max-width: 600px) {
+        .grid1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .grid1 > div:nth-child(n + 4){
+            display: block;
+        }
+    }
+
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1; 
+    }
+</style>
+</head>
+<body>
+    <header class='head'>
+        <a href="/"></a>
+        <nav>
+            <ul class="menu">
+                <li><a ref="/">MY PROFILE MANY TECHNOLOGIES </a></li>  
+                <li><a ref="/">degmvp@gmail.com </a></li>  
+            </ul>
+        </nav>
+        
+    </header>
+    <h1>The Programming Languages Laboratory</h1>
+    <section class="grid1">
+        <div class="anuncio">
+            <img src="py1.jpg">
+            <p> My primary areas of expertise are database administration,database architecture,      performance tuning, backup strategies and advanced techniques using T-SQL.
+                Particularly interested in relational database design using
+                MSSQL Server Specialties: DBA - Specialist (Microsoft Sql Server 2014\2016\2017\2019)
+                Mysql 8.0 PostGresql12.0 - the best open source database
+                Open source : I love to be engaged as programmer with 
+                many languages and tools as follows:
+                NODE.JS - REACT - NEXT.JS - KNEX.JS - EXPRESS.JS - RESTIFY
+                CSS3 - HTML5 - NPM - NPX - NEST.JS - JAVASCRIPT 
+                SHELLSCRIPT-PYTHON3 -PANDAS - C -C++(NEW) RUBY ON RAILS -RUST
+                C Cygwin64 TypeScript: JavaScript With Syntax For Types.
+                Linux20.04-Bash WinSCP connected windows10
+                AWK (text-file maniputaion as programming language too!).
+                Pycharm -Visual Study-Code 
+                Code::Block
+                </p>
+        </div>
+    </section>
+</body>
+</html>

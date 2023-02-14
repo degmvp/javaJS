@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid FlexBox</title>
+<style>
+    body ul, li, p{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        font-size: 1.2rem;
+        font-family: Arial;
+    }
+
+    body {
+        margin-bottom: 100px;
+        background-color: black;
+    }
+
+    p{
+        /*
+        color: rgba(3, 230, 3, 0.966);
+        */
+        color: #52a2f7;
+    }
+    a {
+        /*background-color: tomato;*/
+        text-decoration: none;
+        font-size: 25px;
+        color:black bold;
+    }
+    .head {
+        background:radial-gradient(white,#026932);
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+    .menu{
+        display:flex;
+    }
+    .menu li {
+        margin-left: 10px;
+    }
+    .menu li a {
+        display: block;
+        padding: 10px;
+        /*background-color: tomato;*/
+    }
+    /*css flexbox */
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #52a2f7;
+    }
+    img {
+        width: 300px;
+        max-width: 100%;
+        display: block;
+    }
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .flex > div{
+        flex: 1 1 200px;
+        margin: 10px;
+    }
+
+    .grid1{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 800;
+        margin: 0 auto;
+        grid-gap: 10px;
+    }
+
+    .grid1 > div:nth-child(n + 4){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        align-items: center;
+    }
+    .grid1 > div.anuncio {
+        grid-column: 1;
+        grid-row: 2 / 5;
+        /*border-top: 10px solid tomato;*/
+        display: block;
+    }
+    @media (max-width: 600px) {
+        .grid1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .grid1 > div:nth-child(n + 4){
+            display: block;
+        }
+    }
+
+    .grid1 > div.anuncio {
+        grid-column: auto;
+        grid-row: auto;
+        order: -1; 
+    }
+</style>
+</head>
+<body>
+    <header class='head'>
+        <a href="/"></a>
+        <nav>
+            <ul class="menu">
+                <li><a ref="/">DB-SQL CODE REPOSITORY </a></li>  
+                <li><a ref="/">www.degbarbosa.com.br</a></li>  
+            </ul>
+        </nav>
+        
+    </header>
+    <h1>The Programming Languages Laboratory</h1>
+    <section class="grid1">
+        <div>
+            <img src="cubos.jpg">
+            <p>Database Connection </p>
+        </div>
+        <div>
+            <img src="zza15.jpg">
+            <p>MSSQL Database 2019</p>
+        </div>
+        <div>
+            <img src="zza16.jpg">
+            <p>MSSQL Repository</p>
+        </div>
+        <div>
+            <img src="zzb7.jpg">
+            <p>CATALOG LAB-TSQL FOR SMARTIES</p>
+        </div>
+        
+        <div>
+            <img src="zzb8.jpg">
+            <p>CATALOG LAB-TSQL ADVANCED </p>
+        </div>
+        <div>
+            <img src="zzb9.jpg">
+            <p>CATALOG LAB-TSQL C++</p>
+        </div>
+        <div>
+            <img src="rs7.jpg">
+            <p>CATALOG LAB-TSQL RUST</p>
+        </div>
+        <div>
+            <img src="r14.jpg">
+            <p>CATALOG LAB-TSQL RUBY</p>
+        </div>
+        <div>
+            <img src="py1.jpg">
+            <p>CATALOG LAB-TSQL PYTHON3</p>
+        </div>
+        <div>
+            <img src="node1.jpg">
+            <p>NodeJS Programming Language</p>
+        </div>
+        <div>
+            <img src="pa2.jpg">
+            <p>CATALOG LAB-TSQL PANDAS </p>
+        </div>
+        <div>
+            <img src="yy15.jpg">
+            <p>Windows Node</p>
+        </div>
+        <div>
+            <img src="yjs3.jpg">
+            <p>JavaScript Object Notation - JSON </p>
+        </div>
+        <div class="anuncio">
+            <img src="kn1.jpg">
+            <p>Query Builder SQL</p>
+        </div>
+
+       </section>
+</body>
+</html>
